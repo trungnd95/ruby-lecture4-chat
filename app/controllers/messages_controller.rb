@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
   def create
     load_room
     @message = @room.messages.build message_params
+    @message.username = current_username
     if @message.save
       flash[:success] = "Saved."
       redirect_to room_messages_path(@room)
