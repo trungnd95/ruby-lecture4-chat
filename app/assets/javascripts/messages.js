@@ -36,7 +36,7 @@ App.messages = App.cable.subscriptions.create("MessagesChannel", {
       "data received": data
     });
     // Called when there's incoming data on the websocket for this channel
-    $(".messages").append(data.message);
+    $(".list_messages").append(data.message);
   },
   test: function(data) {
     // Notice that this calls the javascript defined by MessagesChannel#test on the server
