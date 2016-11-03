@@ -1,0 +1,18 @@
+<div class="messages">
+  <h3 class="text-center" style="margin-left: 3rem"> <%= @room.name %> Room</h3>
+  <hr>
+  <div class="list-messages">
+    <h4><%= pluralize(@room.messages.size, 'message') %></h4>
+    <ul class="list-group">
+      <%= render @messages %>
+    </ul>
+  </div>
+  <hr>
+  <%= form_for [@room, Message.new] do |f| %>
+    <div class="form-group">
+      <%= f.text_field :content, placeholder: "Content ...", class: "form-control", style: "width: 30%; display: inline-block" %>
+      <%= f.text_field :username, placeholder: "Username ...", class: "form-control", style: "width: 30%; display: inline-block" %>
+      <%= f.submit "Send" , class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
