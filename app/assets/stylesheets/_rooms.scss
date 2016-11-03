@@ -1,0 +1,12 @@
+.room-index {
+  margin-top: 2rem;
+  padding: 2rem;
+  .list-group {
+    // padding: 2rem;
+    margin-bottom: 2rem;
+    li {
+      border-left: 1px solid gray;
+      border-right: 1px solid gray;
+    }
+  }
+}

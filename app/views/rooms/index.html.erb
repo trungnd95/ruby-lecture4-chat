@@ -1,0 +1,13 @@
+<div class="card room-index">
+  <ul class="list-group list-group-flush">
+    <% @rooms.each do |room| %>
+      <li class="list-group-item"><%= link_to room.name, room%></li>
+    <% end %>
+  </ul>
+  <%= form_for Room.new do |f| %>
+    <div class="form-group">
+      <%= f.text_field  :name , placeholder: "Room name ... ", class: "form-control" , style: "width: 30%; display: inline-block" %>
+      <%= f.submit "Create Room", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
