@@ -2,11 +2,16 @@ class MessagesController < ApplicationController
   def index
     load_room
     @messages = @room.messages
+    respond_to do |format|
+      format.json{render json: @messages}
+      format.html
+    end
   end
 
   def create
     load_room
     @message = @room.messages.build messages_params
+    @message.username =  session[:username]
     if @message.save
       redirect_to room_messages_path(@room)
     else
