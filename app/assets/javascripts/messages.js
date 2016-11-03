@@ -14,3 +14,7 @@ window.updateMessagesViaJSON = function() {
      }
   })
 }
+
+window.updateMessagesViaJS = function(){
+  $.ajax({url: window.location.path, dataType:'script'});
+}

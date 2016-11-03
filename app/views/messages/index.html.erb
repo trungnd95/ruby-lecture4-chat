@@ -8,7 +8,7 @@
     </ul>
   </div>
   <hr>
-  <%= form_for [@room, Message.new] do |f| %>
+  <%= form_for [@room, Message.new], remote: true do |f| %>
     <div class="form-group">
       <%= f.text_field :content, placeholder: "Content ...", class: "form-control", style: "width: 30%; display: inline-block" %>
 
@@ -18,5 +18,5 @@
 </div>
 
 <script>
-  setInterval(updateMessagesViaJSON, 1000);
+  setInterval(updateMessagesViaJS, 1000);
 </script>

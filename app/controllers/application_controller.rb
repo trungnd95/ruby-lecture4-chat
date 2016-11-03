@@ -6,4 +6,11 @@ class ApplicationController < ActionController::Base
   def current_user
     session[:username]
   end
+
+  def require_user!
+    unless current_user
+      flash[:info] = "Please login !"
+      redirect_to  root_path
+    end
+  end
 end

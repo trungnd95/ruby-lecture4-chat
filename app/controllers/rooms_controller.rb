@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  before_action :require_user!, except: :index
   def index
     @rooms = Room.all
   end
